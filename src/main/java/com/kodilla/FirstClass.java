@@ -1,4 +1,4 @@
 package com.kodilla;
 
-public class git iniFirstClass {
+public class FirstClass {
 }
