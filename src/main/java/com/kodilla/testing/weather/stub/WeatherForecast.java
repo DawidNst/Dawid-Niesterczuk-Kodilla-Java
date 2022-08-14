@@ -15,7 +15,9 @@ public class WeatherForecast {
         for (Map.Entry<String, Double> temperature :
                 temperatures.getTemperatures().entrySet()) {
 
-            resultMap.put(temperature.getKey(), temperature.getValue() + 1.0);
+            // adding 1 celsius degree to current value
+            // as a temporary weather forecast
+            resultMap.put(temperature.getKey(), temperature.getValue() + 1.0); // [1]
         }
         return resultMap;
     }
@@ -24,32 +26,31 @@ public class WeatherForecast {
         double result = 0.0;
         int counter = 0;
 
-        for(Map.Entry<String,Double> temperature : temperatures.getTemperatures().entrySet()){
+        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
             counter++;
             result = result + temperature.getValue();
         }
 
-        return result/counter;
+        return result / counter;
 
     }
 
-    public double medianTemperature(){
-        List<Double> tempTemp = new ArrayList<>();
-        double result=0.0;
-        double average=0;
+    public double medianTemperature() {
+        List<Double> medianTemp = new ArrayList<>();
+        double result = 0.0;
+        double average = 0.0;
 
-        for(Map.Entry<String,Double> temperature : temperatures.getTemperatures().entrySet()){
-            tempTemp.add(temperature.getValue());
+        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
+            medianTemp.add(temperature.getValue());
         }
 
-        Collections.sort(tempTemp);
-        if(tempTemp.size() % 2 == 0){
-            average = tempTemp.get(tempTemp.size()/2) + tempTemp.get(tempTemp.size()/2 - 1);
+        Collections.sort(medianTemp);
+        if (medianTemp.size() % 2 == 0) {
+            average = medianTemp.get(medianTemp.size() / 2) + medianTemp.get(medianTemp.size() / 2 - 1);
             result = average / 2;
         } else {
-            result = tempTemp.get(tempTemp.size()/2);
+            result = medianTemp.get(medianTemp.size() / 2);
         }
         return result;
     }
-
 }
