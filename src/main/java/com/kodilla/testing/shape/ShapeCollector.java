@@ -14,7 +14,7 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n) {
-        if (n > collectedShapes.size()){
+        if (n == collectedShapes.size()){
             return null;
         } else if (n < 0){
             return null;
