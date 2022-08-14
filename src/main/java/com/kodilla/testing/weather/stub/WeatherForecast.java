@@ -35,8 +35,8 @@ public class WeatherForecast {
 
     public double medianTemperature(){
         List<Double> tempTemp = new ArrayList<>();
-        double result;
-        double average;
+        double result=0.0;
+        double average=0;
 
         for(Map.Entry<String,Double> temperature : temperatures.getTemperatures().entrySet()){
             tempTemp.add(temperature.getValue());
