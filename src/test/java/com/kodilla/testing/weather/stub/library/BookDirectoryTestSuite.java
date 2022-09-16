@@ -1,5 +1,9 @@
-package com.kodilla.testing.library;
+package com.kodilla.testing.weather.stub.library;
 
+import com.kodilla.testing.library.Book;
+import com.kodilla.testing.library.BookLibrary;
+import com.kodilla.testing.library.LibraryDatabase;
+import com.kodilla.testing.library.LibraryUser;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
