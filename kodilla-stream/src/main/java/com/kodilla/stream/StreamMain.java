@@ -1,9 +1,19 @@
 package com.kodilla.stream;
 
-public class StreamMain {
+import com.kodilla.stream.beautifier.PoemBeautifier;
 
 
-        public static void main(String[] args) {
-            System.out.println("Welcome to module 7 - Stream");
-        }
+public class StreamMain
+{
+    public static void main(String[] args)
+    {
+        PoemBeautifier poemBeautifier=new PoemBeautifier();
+
+        poemBeautifier.beatufiy("Dog", (param)-> "1) " + param.toLowerCase() );
+        poemBeautifier.beatufiy("Fish", (param)-> "2) " + param.toUpperCase() );
+        poemBeautifier.beatufiy("Lazyday", (param)-> "3) " + param+param.toUpperCase() + param );
+        poemBeautifier.beatufiy("Programmer", (param)-> "4) If you can: \"" + param + "\" anyone can !" );
+        poemBeautifier.beatufiy("ABCDEFGH",(param)->"5)"+param+param.toLowerCase());
+        System.out.println(":-)");
     }
+}
