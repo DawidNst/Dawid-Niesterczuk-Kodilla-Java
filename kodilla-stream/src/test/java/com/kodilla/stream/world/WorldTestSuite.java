@@ -57,7 +57,7 @@ public class WorldTestSuite {
         //When
         BigDecimal worldPeopleQuantity = world.getPeopleQuantity();
         System.out.println(worldPeopleQuantity);
-        BigDecimal expectedPeopleQuantity = new BigDecimal("");
+        BigDecimal expectedPeopleQuantity = new BigDecimal("922237353");
         //Then
         Assertions.assertEquals(expectedPeopleQuantity, worldPeopleQuantity);
 
