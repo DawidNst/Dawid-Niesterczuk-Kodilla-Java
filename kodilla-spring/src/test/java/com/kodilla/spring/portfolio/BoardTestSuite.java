@@ -1,43 +1,46 @@
 package com.kodilla.spring.portfolio;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class BoardTestSuite {
-
+    @Autowired
+    private Board board;
 
     @Test
-    void testTaskAdd(){
+    void testAddToDoList() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
-        Board board = context.getBean(Board.class);
-
-        TaskList toDoList = board.getToDoList();
-        TaskList inProgressList = board.getInProgressList();
-        TaskList doneList = board.getDoneList();
-
         //When
-        toDoList.addTaskToTheList("First task");
-        inProgressList.addTaskToTheList("First task in progress");
-        doneList.addTaskToTheList("First done task");
-
-        String toDoTask = toDoList.getTaskFromTheList(0);
-        String inProgressTask = inProgressList.getTaskFromTheList(0);
-        String doneTask = doneList.getTaskFromTheList(0);
+        board.addToDoTask("feed rat");
+        String task = board.getToDoTasks().get(0);
 
         //Then
-        Assertions.assertEquals("First task", toDoTask);
-        Assertions.assertEquals(1, toDoList.getTasks().size());
-
-        Assertions.assertEquals("First task in progress", inProgressTask);
-        Assertions.assertEquals(1, inProgressList.getTasks().size());
-
-        Assertions.assertEquals("First done task", doneTask);
-        Assertions.assertEquals(1, doneList.getTasks().size());
+        assertEquals("feed rat", task);
     }
 
+    @Test
+    void testAddInProgressTask() {
+        //Given
+        //When
+        board.addInProgressTask("home");
+        String task = board.getInProgressTasks().get(0);
+
+        //Then
+        assertEquals("home", task);
+    }
+
+    @Test
+    void testAddDoneTask() {
+        //Given
+        //When
+        board.addDoneTask("jump");
+        String task = board.getDoneTasks().get(0);
+
+        //Then
+        assertEquals("jump", task);
+    }
 }

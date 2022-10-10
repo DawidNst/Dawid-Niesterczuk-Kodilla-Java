@@ -1,12 +1,12 @@
 package com.kodilla.spring.portfolio;
 
 
+import java.util.List;
+
 public class Board {
-
-    final TaskList toDoList;
-    final TaskList inProgressList;
-    final TaskList doneList;
-
+    private final TaskList toDoList;
+    private final TaskList inProgressList;
+    private final TaskList doneList;
 
     public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
         this.toDoList = toDoList;
@@ -14,15 +14,27 @@ public class Board {
         this.doneList = doneList;
     }
 
-    public TaskList getToDoList() {
-        return toDoList;
+    public void addToDoTask(String task) {
+        this.toDoList.addTask(task);
     }
 
-    public TaskList getInProgressList() {
-        return inProgressList;
+    public void addInProgressTask(String task) {
+        this.inProgressList.addTask(task);
     }
 
-    public TaskList getDoneList() {
-        return doneList;
+    public void addDoneTask(String task) {
+        this.doneList.addTask(task);
+    }
+
+    public List<String> getToDoTasks() {
+        return this.toDoList.getTasks();
+    }
+
+    public List<String> getInProgressTasks() {
+        return this.inProgressList.getTasks();
+    }
+
+    public List<String> getDoneTasks() {
+        return this.doneList.getTasks();
     }
 }
