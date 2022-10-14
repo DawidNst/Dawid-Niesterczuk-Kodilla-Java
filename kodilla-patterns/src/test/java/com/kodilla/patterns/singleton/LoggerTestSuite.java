@@ -1,22 +1,28 @@
 package com.kodilla.patterns.singleton;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoggerTestSuite {
-
     private static Logger logger;
 
-    @Test
-    void testLog(){
-        //given
+    @BeforeAll
+    public static void getLogger() {
         logger = Logger.LOG;
-        //when
-        logger.log("signed out");
-        logger.log("changed");
-        logger.log("signed in");
-        String lastLog = logger.getLastLog();
-        //then
-        assertEquals("signed in", lastLog);
+        logger.log("Checking");
     }
+
+    @Test
+    void testGetLastLogger() {
+        //Given
+
+        //When
+        String lastLog = logger.getLastLog();
+
+        //Then
+        assertEquals("Checking", lastLog);
+    }
+
 }
