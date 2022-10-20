@@ -8,10 +8,10 @@ public class BigmacTestSuite {
     void testBigmacBuilder() {
         //Given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
-                .BreadType(Muffin.ROLL)
-                .Burgers(Burgers.TRIPLE)
-                .SauceType(Sauce.STANDARD)
-                .ingredient("Bacon")
+                .breadType(Muffin.ROLL)
+                .burgers(Burgers.TRIPLE)
+                .sauceType(Sauce.STANDARD)
+                .ingredient("bacon")
                 .ingredient("double chess")
                 .ingredient("onion")
                 .ingredient("tomato")

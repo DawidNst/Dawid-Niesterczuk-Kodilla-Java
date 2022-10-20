@@ -22,17 +22,17 @@ public final class Bigmac {
         private String sauceType;
         private final List<String> ingredients = new ArrayList<>();
 
-        public BigmacBuilder BreadType (String breadType) {
+        public BigmacBuilder breadType (String breadType) {
             this.breadType = breadType;
             return this;
         }
 
-        public BigmacBuilder Burgers (int burgers) {
+        public BigmacBuilder burgers (int burgers) {
             this.burgers = burgers;
             return this;
         }
 
-        public BigmacBuilder SauceType (String sauceType) {
+        public BigmacBuilder sauceType (String sauceType) {
             this.sauceType = sauceType;
             return this;
         }
