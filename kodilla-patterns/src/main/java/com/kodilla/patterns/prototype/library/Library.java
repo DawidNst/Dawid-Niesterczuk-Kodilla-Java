@@ -30,12 +30,14 @@ public final class Library extends Prototype<Library> {
     }
 
     public Library deepCopy() throws CloneNotSupportedException {
-        Library cloneLibrary = super.clone();
-        cloneLibrary.books = new HashSet<>();
-        cloneLibrary.books.addAll(books);
-        return cloneLibrary;
+        Library clonedLibrary = super.clone();
+        clonedLibrary.books = new HashSet<>();
+        for (Book b : books) {
+            Book clonedBook = new Book(b.getTitle(), b.getAuthor(), b.getPublicationDate());
+            clonedLibrary.getBooks().add(clonedBook);
+        }
+        return clonedLibrary;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -3,7 +3,7 @@ package com.kodilla.patterns.prototype.library;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Book {
+public class  Book {
     final String title;
     final String author;
     final LocalDate publicationDate;
@@ -13,6 +13,7 @@ public class Book {
         this.author = author;
         this.publicationDate = publicationDate;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -29,5 +30,17 @@ public class Book {
     @Override
     public String toString() {
         return "Title: " + title + ", Author: " + author + ", Publicated: " + publicationDate;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public LocalDate getPublicationDate() {
+        return publicationDate;
     }
 }
