@@ -48,11 +48,10 @@ public class DbManagerTestSuite {
         DbManager dbManager = DbManager.getInstance();
 
         //When
-        String sqlQuery = """
-                SELECT U.FIRSTNAME, U.LASTNAME, I.SUMMARY
-                FROM USERS U
-                JOIN ISSUES I ON U.ID = I.USER_ID_ASSIGNEDTO
-                """;
+        String sqlQuery =
+                "SELECT U.FIRSTNAME, U.LASTNAME, I.SUMMARY " +
+                "FROM USERS U " +
+                "JOIN ISSUES I ON U.ID = I.USER_ID_ASSIGNEDTO" ;
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
 
@@ -75,13 +74,12 @@ public class DbManagerTestSuite {
         DbManager dbManager = DbManager.getInstance();
 
         //When
-        String sqlQuery = """
-                SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS
-                FROM USERS U
-                JOIN POSTS P ON U.ID = P.USER_ID
-                GROUP BY U.ID
-                HAVING COUNT(*) >= 2
-                """;
+        String sqlQuery =
+                "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS " +
+                "FROM USERS U " +
+                "JOIN POSTS P ON U.ID = P.USER_ID " +
+                "GROUP BY U.ID " +
+                "HAVING COUNT(*) >= 2 ";
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
 
