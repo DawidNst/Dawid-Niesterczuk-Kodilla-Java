@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.task;
+package com.kodilla.spring.task;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -17,7 +17,7 @@ public final class Task {
     private String description;
     private Date created;
     private int duration;
-
+    private TaskFinancialDetails taskFinancialDetails;
     public Task() {
     }
 
@@ -70,5 +70,13 @@ public final class Task {
     @Repository
     public interface TaskDao extends CrudRepository<Task, Integer> {
         List<Task> findByDuration(int duration);
+    }
+    @OneToOne(cascade = CascadeType.ALL,fetch =FetchType.EAGER)
+    public TaskFinancialDetails getTaskFinancialDetails() {
+        return taskFinancialDetails;
+    }
+
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
     }
 }
