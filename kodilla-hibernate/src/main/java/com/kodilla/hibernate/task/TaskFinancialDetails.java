@@ -1,4 +1,4 @@
-package com.kodilla.spring.task;
+package com.kodilla.hibernate.task;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

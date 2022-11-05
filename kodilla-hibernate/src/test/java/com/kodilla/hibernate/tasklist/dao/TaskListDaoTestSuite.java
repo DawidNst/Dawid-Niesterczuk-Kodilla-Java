@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
@@ -20,16 +22,18 @@ public class TaskListDaoTestSuite {
     void testFindByListName() {
         //Given
         TaskList taskList = new TaskList(NAME, DESCRIPTION);
-
-        //When
+        String listName = taskList.getListName();
         taskListDao.save(taskList);
 
+        //When
+        List<TaskList> result =  taskListDao.findByListName(listName);
+
         //Then
-        int id = taskList.getId();
-        Optional<TaskList> readTaskList = taskListDao.findById(id);
-        assertTrue(readTaskList.isPresent());
+        assertEquals(1, result.size());
+        assertEquals(listName, result.get(0).getListName());;
 
         //CleanUp
+        int id = result.get(0).getId();
         taskListDao.deleteById(id);
     }
 }

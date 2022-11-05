@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.task.dao;
 
-import com.kodilla.spring.task.TaskFinancialDetails;
+import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.tasklist.dao.TaskFinancialDetailsDao;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
