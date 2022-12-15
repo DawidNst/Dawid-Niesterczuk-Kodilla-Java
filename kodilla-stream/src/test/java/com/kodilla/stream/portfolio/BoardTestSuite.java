@@ -1,9 +1,12 @@
 package com.kodilla.stream.portfolio;
 
+import com.kodilla.stream.world.portfolio.Board;
+import com.kodilla.stream.world.portfolio.Task;
+import com.kodilla.stream.world.portfolio.TaskList;
+import com.kodilla.stream.world.portfolio.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
