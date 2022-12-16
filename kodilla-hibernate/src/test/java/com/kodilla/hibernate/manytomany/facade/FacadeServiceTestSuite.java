@@ -61,7 +61,7 @@ public class FacadeServiceTestSuite {
         employeeDao.save(rivi);
         employeeDao.save(johny);
         //When
-        List<Employee> facadeResult = facadeService.findEmployeeByPartOfTheLastname("ban");
+        List<Employee> facadeResult = facadeService.findEmployeeByPartOfTheLastname("an");
         //Then
         Assertions.assertEquals(1, facadeResult.size());
         //CleanUp
