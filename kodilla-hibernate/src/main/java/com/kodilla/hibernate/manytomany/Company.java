@@ -6,6 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.findCompanyByPartOfTheName",
+        query = "FROM Company WHERE name LIKE CONCAT('%', :ARG, '%')"
+)
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesWithGivenPartName",
         query = "SELECT * FROM COMPANIES" +
