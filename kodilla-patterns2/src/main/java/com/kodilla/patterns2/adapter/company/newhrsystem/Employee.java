@@ -1,44 +1,57 @@
 package com.kodilla.patterns2.adapter.company.newhrsystem;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 public class Employee {
     final private String peselId;
-    final private String firstname;
-    final private String lastname;
+    final private String firstName;
+    final private String lastName;
     final private BigDecimal baseSalary;
 
-    public Employee(String peselId, String firstname, String lastname, BigDecimal baseSalary) {
+    public Employee(String peselId, String firstName, String lastName, BigDecimal baseSalary) {
         this.peselId = peselId;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.baseSalary = baseSalary;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public BigDecimal getBaseSalary() {
         return baseSalary;
     }
 
+    public String getPeselId() {
+        return peselId;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Employee)) return false;
+
         Employee employee = (Employee) o;
-        return Objects.equals(peselId, employee.peselId);
+
+        return peselId != null ? peselId.equals(employee.peselId) : employee.peselId == null;
     }
 
     @Override
     public int hashCode() {
-        return peselId != null ? Objects.hash(peselId) : 0;
+        return peselId != null ? peselId.hashCode() : 0;
     }
+
 
     @Override
     public String toString() {
         return "Employee{" +
-                "peselId='" + peselId + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                "peselId=" + peselId + '\'' +
+                ", firstname='" + firstName + '\'' +
+                ", lastname='" + lastName + '\'' +
                 ", baseSalary=" + baseSalary +
                 '}';
     }

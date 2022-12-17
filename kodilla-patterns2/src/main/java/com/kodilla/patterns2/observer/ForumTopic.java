@@ -1,4 +1,4 @@
-package observer.forum;
+package com.kodilla.patterns2.observer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class ForumTopic implements Observable {
 
     @Override
     public void notifyObserver() {
-        for (Observer observer : observers) {
+        for(Observer observer : observers) {
             observer.update(this);
         }
     }

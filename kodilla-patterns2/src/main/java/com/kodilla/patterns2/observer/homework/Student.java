@@ -1,4 +1,4 @@
-package observer.homework;
+package com.kodilla.patterns2.observer.homework;
 
 import java.util.ArrayList;
 import java.util.List;

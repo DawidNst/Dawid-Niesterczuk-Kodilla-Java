@@ -1,4 +1,4 @@
-package observer.forum;
+package com.kodilla.patterns2.observer;
 
 public class ForumUser implements Observer{
     private final String username;
