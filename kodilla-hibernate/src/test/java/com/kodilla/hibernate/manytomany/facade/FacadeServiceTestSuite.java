@@ -54,7 +54,7 @@ public class FacadeServiceTestSuite {
         Employee urban = new Employee("Andrzej" , "Urban");
         Employee jackowski = new Employee("Wróżka" , "Jackowski");
         Employee rivi = new Employee("Geralt" , "Rivi");
-        Employee johny = new Employee("Johony" , "Johny");
+        Employee johny = new Employee("Johony" , "Johan");
         employeeDao.save(kowalski);
         employeeDao.save(urban);
         employeeDao.save(jackowski);
