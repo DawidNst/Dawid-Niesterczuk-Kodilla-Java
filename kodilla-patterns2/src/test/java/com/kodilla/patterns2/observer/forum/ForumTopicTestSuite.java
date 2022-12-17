@@ -1,5 +1,9 @@
 package com.kodilla.patterns2.observer.forum;
 
+import observer.forum.ForumTopic;
+import observer.forum.ForumUser;
+import observer.forum.JavaHelpForumTopic;
+import observer.forum.JavaToolsForumTopic;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

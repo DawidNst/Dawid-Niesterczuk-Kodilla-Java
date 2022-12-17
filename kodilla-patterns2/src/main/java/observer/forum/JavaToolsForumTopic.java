@@ -1,4 +1,4 @@
-package com.kodilla.patterns2.observer.forum;
+package observer.forum;
 
 public class JavaToolsForumTopic extends ForumTopic {
     public JavaToolsForumTopic() {

@@ -1,4 +1,4 @@
-package com.kodilla.patterns2.observer.homework;
+package observer.homework;
 
 public interface Observer {
     void update(Student homeworkQueue);
