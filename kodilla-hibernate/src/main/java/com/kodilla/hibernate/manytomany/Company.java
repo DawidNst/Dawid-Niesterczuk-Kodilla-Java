@@ -8,7 +8,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Company.findCompanyByPartOfTheName",
-        query = "FROM Company WHERE name LIKE CONCAT('%', :Companies, '%')"
+        query = "FROM Company WHERE name LIKE CONCAT('%', :COMPANIES, '%')"
 )
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesWithGivenPartName",

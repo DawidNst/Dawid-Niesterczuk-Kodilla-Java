@@ -22,7 +22,7 @@ public class FacadeServiceTestSuite {
     private EmployeeDao employeeDao;
 
 
-    @Test
+  @Test
     public void findCompanyByPartOfTheNameTest() {
         //Given
         Company btc = new Company("BTC");
@@ -47,7 +47,7 @@ public class FacadeServiceTestSuite {
         companyDao.delete(algo);
     }
 
-    @Test
+   @Test
     public void findEmployeeByPartOfTheLastnameTest() {
         //Given
         Employee kowalski = new Employee("Janusz" , "Kowalski");
