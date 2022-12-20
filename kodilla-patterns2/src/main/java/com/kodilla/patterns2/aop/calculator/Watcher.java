@@ -29,4 +29,8 @@ public class Watcher {
         }
         return result;
     }
+    @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..)) && target(object)")
+    public void logEvent(Object object) {
+        LOGGER.info("Class:" + object.getClass().getName() + ", processing order");
+    }
 }
