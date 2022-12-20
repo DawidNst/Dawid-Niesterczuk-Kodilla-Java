@@ -21,4 +21,5 @@ public abstract class MedianAdaptee implements BookStatistics {
         Statistics statistics = new Statistics();
         return statistics.medianPublicationYear(books);
     }
+
 }
