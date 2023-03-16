@@ -104,19 +104,21 @@ public class CrudAppTestSuite {
 
     @Test
     public void shouldCreateTrelloCard() throws InterruptedException {
+
+        //GIVEN
         String taskName = createCrudAppTestTask();
+        //WHEN
         sendTestTaskToTrello(taskName);
+        //THEN
         assertTrue(checkTaskExistsInTrello(taskName));
         deleteTaskAfterTest(taskName);
     }
 
     private void deleteTaskAfterTest(String taskName) throws InterruptedException {
 
-        //GIVEN
         driver.switchTo().alert().accept();
         driver.navigate().refresh();
         while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
-        //WHEN
         driver.findElements(
                         By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm ->
@@ -124,7 +126,6 @@ public class CrudAppTestSuite {
                                 .getText().equals(taskName))
                 .forEach(theForm -> {theForm.findElement(By.xpath(".//button[4]")).click();
                 });
-        //THEN
         Thread.sleep(3000);
     }
 
